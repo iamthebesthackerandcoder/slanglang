@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Library - SlangLang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="highlight">SlangLang</a></h1>
+            <p>The Gen Z Programming Language</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#syntax">Syntax</a></li>
+                <li><a href="index.html#examples">Examples</a></li>
+                <li><a href="index.html#install">Installation</a></li>
+                <li><a href="index.html#docs">Documentation</a></li>
+                <li><a href="guide.html">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container">
+                <h1>SlangLang Standard Library</h1>
+                
+                <p>The SlangLang standard library provides useful functions and modules that are available by default. Since SlangLang compiles to Julia, you can use any Julia function or module within SlangLang code.</p>
+                
+                <h2>Built-in Functions</h2>
+                
+                <h3>Input/Output Functions</h3>
+                <div class="code-block">
+                    <pre><code>print(value)           # Print a value to stdout
+println(value)         # Print a value with a newline
+printstyled(value)     # Print with styling options</code></pre>
+                </div>
+                
+                <h3>Mathematical Functions</h3>
+                <div class="code-block">
+                    <pre><code>abs(x)               # Absolute value
+sqrt(x)              # Square root
+exp(x)               # Exponential function
+log(x)               # Natural logarithm
+sin(x), cos(x), tan(x) # Trigonometric functions
+round(x)             # Round to nearest integer
+floor(x)             # Floor function
+ceil(x)              # Ceiling function
+min(x, y)            # Minimum of two values
+max(x, y)            # Maximum of two values</code></pre>
+                </div>
+                
+                <h3>String Functions</h3>
+                <div class="code-block">
+                    <pre><code>length(s)            # Length of string
+uppercase(s)         # Convert to uppercase
+lowercase(s)         # Convert to lowercase
+strip(s)             # Remove leading/trailing whitespace
+split(s, delimiter)  # Split string by delimiter
+replace(s, old, new) # Replace substring
+string(x)            # Convert value to string</code></pre>
+                </div>
+                
+                <h3>Collection Functions</h3>
+                <div class="code-block">
+                    <pre><code>length(collection)   # Number of elements
+push!(collection, item) # Add item to collection
+pop!(collection)     # Remove and return last item
+first(collection)    # First element
+last(collection)     # Last element
+reverse(collection)  # Reverse the collection
+sort(collection)     # Sort the collection
+in(item, collection) # Check if item is in collection
+unique(collection)   # Remove duplicates</code></pre>
+                </div>
+                
+                <h2>Standard Modules</h2>
+                
+                <h3>Random Module</h3>
+                <p>Generate random numbers and make choices:</p>
+                <div class="code-block">
+                    <pre><code>fr Random
+
+weak r = Random.rand()              # Random float between 0 and 1
+weak i = Random.rand(1:10)          # Random integer between 1 and 10
+Random.shuffle([1,2,3,4,5])        # Randomly shuffle a list</code></pre>
+                </div>
+                
+                <h3>Dates Module</h3>
+                <p>Work with dates and times:</p>
+                <div class="code-block">
+                    <pre><code>fr Dates
+
+weak today = Dates.today()          # Current date
+weak now = Dates.now()              # Current date and time
+weak formatted = Dates.format(now, "yyyy-mm-dd HH:MM:SS")</code></pre>
+                </div>
+                
+                <h3>Statistics Module</h3>
+                <p>Perform statistical operations:</p>
+                <div class="code-block">
+                    <pre><code>fr Statistics
+
+weak data = [1, 2, 3, 4, 5]
+weak mean_val = Statistics.mean(data)     # Calculate mean
+weak median_val = Statistics.median(data) # Calculate median
+weak std_val = Statistics.std(data)       # Calculate standard deviation</code></pre>
+                </div>
+                
+                <h3>File I/O</h3>
+                <p>Read and write files:</p>
+                <div class="code-block">
+                    <pre><code>weak content = read("file.txt", String)  # Read entire file as string
+write("output.txt", "Hello, World!")     # Write string to file
+
+# Read file line by line
+fr IOBuffer
+weak file = open("file.txt")
+slay !eof(file):
+    weak line = readline(file)
+    print(line)
+close(file)</code></pre>
+                </div>
+                
+                <h2>Example Programs</h2>
+                
+                <h3>Simple Calculator</h3>
+                <div class="code-block">
+                    <pre><code>drop calculate(operation, a, b):
+    bussin operation == "+":
+        tea a + b
+    bussd operation == "-":
+        tea a - b
+    bussd operation == "*":
+        tea a * b
+    bussd operation == "/":
+        bussin b != 0:
+            tea a / b
+        no cap:
+            print("Error: Division by zero!")
+            tea 0
+    no cap:
+        print("Error: Unknown operation")
+        tea 0
+
+# Example usage
+weak result = calculate("+", 5, 3)
+print("5 + 3 =", result)</code></pre>
+                </div>
+                
+                <h3>Text Processing</h3>
+                <div class="code-block">
+                    <pre><code>drop word_count(text):
+    weak words = split(strip(lowercase(text)), " ")
+    tea length(words)
+
+drop char_count(text):
+    tea length(text)
+
+weak sample = "This is a sample text for counting."
+print("Word count:", word_count(sample))
+print("Character count:", char_count(sample))</code></pre>
+                </div>
+                
+                <h3>Working with Lists</h3>
+                <div class="code-block">
+                    <pre><code>drop filter_evens(numbers):
+    tea [x for x in numbers based x % 2 == 0]
+
+drop square_all(numbers):
+    tea [x^2 for x in numbers]
+
+drop find_max(numbers):
+    weak max_val = numbers[1]
+    let's go num based numbers[2:end]:
+        bussin num > max_val:
+            max_val = num
+    tea max_val
+
+weak nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("Evens:", filter_evens(nums))
+print("Squares:", square_all(nums))
+print("Max:", find_max(nums))</code></pre>
+                </div>
+                
+                <h2>Juliay Interoperability</h2>
+                
+                <p>Since SlangLang compiles to Julia, you can use any Julia packages. Just import them as you would in Julia:</p>
+                
+                <div class="code-block">
+                    <pre><code># You can import Julia packages
+# Note: This requires the packages to be installed in your Julia environment
+# fr PyPlot  # For plotting
+# fr DataFrames  # For data manipulation
+# fr JSON  # For JSON processing</code></pre>
+                </div>
+                
+                <h2>Performance Tips</h2>
+                
+                <ul>
+                    <li>Use <code>strong</code> for values that won't change to help the compiler optimize</li>
+                    <li>Leverage Julia's multiple dispatch by defining methods for different types</li>
+                    <li>Use array comprehensions instead of loops when possible for better performance</li>
+                    <li>Avoid global variables in performance-critical code</li>
+                    <li>Pre-allocate arrays when you know their size in advance</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>SlangLang - The Gen Z Programming Language</p>
+            <p>Powered by Julia's JIT compilation and multiple dispatch</p>
+        </div>
+    </footer>
+</body>
+</html>

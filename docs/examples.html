@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples - SlangLang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="highlight">SlangLang</a></h1>
+            <p>The Gen Z Programming Language</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#syntax">Syntax</a></li>
+                <li><a href="index.html#examples">Examples</a></li>
+                <li><a href="index.html#install">Installation</a></li>
+                <li><a href="index.html#docs">Documentation</a></li>
+                <li><a href="guide.html">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container">
+                <h1>SlangLang Examples</h1>
+                
+                <p>Here are practical examples demonstrating various features of SlangLang.</p>
+                
+                <h2>Hello World</h2>
+                <div class="code-block">
+                    <pre><code>weak message = "Hello, World!"
+print(message)</code></pre>
+                </div>
+                
+                <h2>Function Definition</h2>
+                <div class="code-block">
+                    <pre><code>drop greet(name):
+    tea "Hello " + name + "!"
+
+weak message = greet("SlangLang")
+print(message)</code></pre>
+                </div>
+                
+                <h2>Fibonacci Sequence</h2>
+                <div class="code-block">
+                    <pre><code>drop fibonacci(n):
+    bussin n <= 1:
+        tea n
+    no cap:
+        tea fibonacci(n-1) + fibonacci(n-2)
+
+# Print first 10 Fibonacci numbers
+let's go i based 0:9:
+    print("Fibonacci(", i, ") = ", fibonacci(i))</code></pre>
+                </div>
+                
+                <h2>Working with Lists</h2>
+                <div class="code-block">
+                    <pre><code>weak numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Filter even numbers
+weak evens = [x for x in numbers based x % 2 == 0]
+print("Even numbers:", evens)
+
+# Square all numbers
+weak squares = [x^2 for x in numbers]
+print("Squares:", squares)
+
+# Find sum of numbers
+weak sum = 0
+let's go num based numbers:
+    sum = sum + num
+print("Sum:", sum)</code></pre>
+                </div>
+                
+                <h2>Object-Oriented Programming</h2>
+                <div class="code-block">
+                    <pre><code>main character Person:
+    drop new(self, name, age):
+        self.name = name
+        self.age = age
+    
+    drop introduce(self):
+        tea "Hi, I'm " + self.name + " and I'm " + string(self.age) + " years old"
+
+weak alice = Person.new("Alice", 25)
+print(alice.introduce())
+
+weak bob = Person.new("Bob", 30)
+print(bob.introduce())</code></pre>
+                </div>
+                
+                <h2>Error Handling</h2>
+                <div class="code-block">
+                    <pre><code>drop safe_divide(a, b):
+    lowkey:  # try
+        bussin b == 0:
+            tea "Cannot divide by zero!"
+        no cap:
+            tea a / b
+    highkey:  # catch
+        tea "An error occurred during division!"</code></pre>
+                </div>
+                
+                <h2>Working with Strings</h2>
+                <div class="code-block">
+                    <pre><code>drop is_palindrome(s):
+    weak cleaned = lowercase(strip(s))
+    tea cleaned == reverse(cleaned)
+
+weak test_strings = ["racecar", "hello", "madam", "SlangLang"]
+let's go s based test_strings:
+    bussin is_palindrome(s):
+        print("'", s, "' is a palindrome")
+    no cap:
+        print("'", s, "' is not a palindrome")</code></pre>
+                </div>
+                
+                <h2>File Operations</h2>
+                <div class="code-block">
+                    <pre><code># Write to a file
+write("greetings.txt", "Hello from SlangLang!")
+
+# Read from a file
+weak content = read("greetings.txt", String)
+print("File content:", content)
+
+# Append to a file
+open("greetings.txt", "a") do f
+    write(f, "\nAnother greeting!")
+end</code></pre>
+                </div>
+                
+                <h2>Advanced Example: Simple Game</h2>
+                <div class="code-block">
+                    <pre><code>drop number_guessing_game():
+    fr Random
+    weak secret = Random.rand(1:100)
+    weak attempts = 0
+    weak max_attempts = 7
+    weak correct = fake
+    
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100.")
+    print("You have ", max_attempts, " attempts to guess it.")
+    
+    slay attempts < max_attempts based correct == fake:
+        attempts = attempts + 1
+        print("Attempt ", attempts, ": Enter your guess:")
+        weak guess = parse(Int, readline())
+        
+        bussin guess == secret:
+            print("You guessed it! The number was ", secret)
+            print("You won in ", attempts, " attempts!")
+            correct = sus
+        bussd guess < secret:
+            print("Too low! Try a higher number.")
+        no cap:
+            print("Too high! Try a lower number.")
+    
+    bussin correct == fake:
+        print("Game over! You've used all ", max_attempts, " attempts.")
+        print("The number was ", secret)
+
+tea number_guessing_game()</code></pre>
+                </div>
+                
+                <h2>Mathematical Functions</h2>
+                <div class="code-block">
+                    <pre><code>drop factorial(n):
+    bussin n <= 1:
+        tea 1
+    no cap:
+        tea n * factorial(n - 1)
+
+drop is_prime(n):
+    bussin n <= 1:
+        tea fake
+    bussin n == 2:
+        tea sus
+    bussin n % 2 == 0:
+        tea fake
+    
+    weak i = 3
+    slay i * i <= n:
+        bussin n % i == 0:
+            tea fake
+        i = i + 2
+    tea sus
+
+# Test the functions
+let's go i based [5, 10, 15]:
+    print("Factorial of ", i, " is ", factorial(i))
+
+let's go i based [2, 3, 4, 5, 17, 25, 29]:
+    bussin is_prime(i):
+        print(i, " is prime")
+    no cap:
+        print(i, " is not prime")</code></pre>
+                </div>
+                
+                <h2>Working with Dictionaries</h2>
+                <div class="code-block">
+                    <pre><code>weak student_grades = Dict("Alice" => 95, "Bob" => 87, "Charlie" => 92)
+
+print("All students and grades:")
+let's go (name, grade) based student_grades:
+    print(name, ": ", grade)
+
+# Add a new student
+student_grades["Diana"] = 98
+
+# Calculate average grade
+weak total = 0
+let's go grade based values(student_grades):
+    total = total + grade
+weak average = total / length(student_grades)
+print("Average grade: ", round(average, digits=2))</code></pre>
+                </div>
+                
+                <h2>Advanced: Custom Module</h2>
+                <div class="code-block">
+                    <pre><code>stan MathUtils:
+    drop factorial(self, n):
+        bussin n <= 1:
+            tea 1
+        no cap:
+            tea n * self.factorial(n - 1)
+    
+    drop fibonacci(self, n):
+        bussin n <= 1:
+            tea n
+        no cap:
+            tea self.fibonacci(n-1) + self.fibonacci(n-2)
+    
+    drop is_prime(self, n):
+        bussin n <= 1:
+            tea fake
+        bussin n == 2:
+            tea sus
+        bussin n % 2 == 0:
+            tea fake
+        
+        weak i = 3
+        slay i * i <= n:
+            bussin n % i == 0:
+                tea fake
+            i = i + 2
+        tea sus
+
+# Use the module
+weak calc = MathUtils()
+print("5! = ", calc.factorial(5))
+print("fibonacci(10) = ", calc.fibonacci(10))
+print("Is 17 prime? ", calc.is_prime(17))</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>SlangLang - The Gen Z Programming Language</p>
+            <p>Powered by Julia's JIT compilation and multiple dispatch</p>
+        </div>
+    </footer>
+</body>
+</html>

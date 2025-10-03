@@ -1,0 +1,26 @@
+# Julia-specific
+*.jl.bak
+*.jl~
+
+# Build artifacts
+build/
+dist/
+*.so
+*.dll
+*.dylib
+*.sys
+*.exe
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test outputs
+*.out
+*.log

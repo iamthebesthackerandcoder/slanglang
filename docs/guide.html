@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Guide - SlangLang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="highlight">SlangLang</a></h1>
+            <p>The Gen Z Programming Language</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#syntax">Syntax</a></li>
+                <li><a href="index.html#examples">Examples</a></li>
+                <li><a href="index.html#install">Installation</a></li>
+                <li><a href="index.html#docs">Documentation</a></li>
+                <li><a href="guide.html">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container">
+                <h1>Language Guide</h1>
+                
+                <h2>Getting Started</h2>
+                <p>SlangLang is a programming language designed to be fun and relatable, using Gen Z slang terms as keywords. It compiles to Julia code, leveraging Julia's high-performance JIT compilation.</p>
+                
+                <h2>Basic Syntax</h2>
+                
+                <h3>Comments</h3>
+                <p>Comments in SlangLang start with <code>#</code>:</p>
+                <div class="code-block">
+                    <pre><code># This is a comment
+weak x = 10  # This is also a comment</code></pre>
+                </div>
+                
+                <h3>Variables</h3>
+                <p>There are two types of variables in SlangLang:</p>
+                <ul>
+                    <li><code>weak</code> - for mutable variables (can be changed)</li>
+                    <li><code>strong</code> - for immutable variables (cannot be changed)</li>
+                </ul>
+                <div class="code-block">
+                    <pre><code>weak name = "Alice"      # mutable variable
+strong birth_year = 2000  # immutable variable</code></pre>
+                </div>
+                
+                <h3>Data Types</h3>
+                <p>SlangLang supports the same data types as Julia:</p>
+                <ul>
+                    <li>Integers: <code>42</code>, <code>-17</code></li>
+                    <li>Floats: <code>3.14</code>, <code>-2.5</code></li>
+                    <li>Strings: <code>"Hello"</code>, <code>'World'</code></li>
+                    <li>Booleans: <code>sus</code> (True), <code>fake</code> (False)</li>
+                </ul>
+                
+                <h3>Functions</h3>
+                <p>Functions are defined using <code>drop</code> and return values with <code>tea</code>:</p>
+                <div class="code-block">
+                    <pre><code>drop greet(name):
+    tea "Hello " + name + "!"
+
+weak message = greet("World")
+print(message)</code></pre>
+                </div>
+                
+                <h3>Conditionals</h3>
+                <p>Use <code>bussin</code>, <code>bussd</code>, and <code>no cap</code> for conditionals:</p>
+                <div class="code-block">
+                    <pre><code>weak age = 18
+
+bussin age >= 18:
+    print("You're an adult!")
+bussd age >= 13:
+    print("You're a teenager!")
+no cap:
+    print("You're a child!")</code></pre>
+                </div>
+                
+                <h3>Loops</h3>
+                <p>For loops use <code>let's go</code> and <code>based</code> (meaning "in"):</p>
+                <div class="code-block">
+                    <pre><code>weak items = ["apple", "banana", "cherry"]
+
+let's go item based items:
+    print(item)</code></pre>
+                </div>
+                
+                <p>While loops use <code>slay</code>:</p>
+                <div class="code-block">
+                    <pre><code>weak count = 0
+
+slay count < 5:
+    print("Count is", count)
+    count = count + 1</code></pre>
+                </div>
+                
+                <h3>Logical Operators</h3>
+                <p>Use these operators to combine conditions:</p>
+                <ul>
+                    <li><code>based</code> - AND (equivalent to <code>&&</code>)</li>
+                    <li><code>crazy</code> - OR (equivalent to <code>||</code>)</li>
+                    <li><code>cap</code> - NOT (equivalent to <code>!</code>)</li>
+                </ul>
+                <div class="code-block">
+                    <pre><code>weak a = sus  # True
+weak b = fake  # False
+
+bussin a based cap b:  # True AND (NOT False) = True
+    print("Condition is bussin!")</code></pre>
+                </div>
+                
+                <h3>Classes</h3>
+                <p>Define classes using <code>main character</code> or <code>flex</code>:</p>
+                <div class="code-block">
+                    <pre><code>main character Person:
+    drop new(name, age):
+        weak p = flex()
+        p.name = name
+        p.age = age
+        tea p
+
+    drop greet(self):
+        tea "Hi, I'm " + self.name</code></pre>
+                </div>
+                
+                <h3>Error Handling</h3>
+                <p>Use <code>lowkey</code> and <code>highkey</code> for exception handling:</p>
+                <div class="code-block">
+                    <pre><code>lowkey:  # try
+    # risky code here
+    weak result = risky_function()
+highkey:  # catch
+    print("An error occurred!")
+    result = 0</code></pre>
+                </div>
+                
+                <h3>Assertions</h3>
+                <p>Use <code>deadass</code> to assert that a condition is true:</p>
+                <div class="code-block">
+                    <pre><code>weak x = 5
+deadass x > 0  # This will pass
+deadass x < 0  # This will cause an error!</code></pre>
+                </div>
+                
+                <h3>Modules</h3>
+                <p>Define modules using <code>stan</code>:</p>
+                <div class="code-block">
+                    <pre><code>stan MathUtils:
+    drop square(x):
+        tea x * x
+
+    drop cube(x):
+        tea x * x * x</code></pre>
+                </div>
+                
+                <h2>Best Practices</h2>
+                
+                <h3>Naming Conventions</h3>
+                <p>Follow these conventions for better code readability:</p>
+                <ul>
+                    <li>Variables and functions: use <code>snake_case</code> (e.g., <code>user_name</code>)</li>
+                    <li>Constants: use <code>SCREAMING_SNAKE_CASE</code> (e.g., <code>MAX_SIZE</code>)</li>
+                </ul>
+                
+                <h3>Code Organization</h3>
+                <ul>
+                    <li>Start each file with a comment explaining its purpose</li>
+                    <li>Group related functions together</li>
+                    <li>Use meaningful variable names</li>
+                </ul>
+                
+                <h2>Advanced Features</h2>
+                
+                <h3>Comprehensions</h3>
+                <p>You can use Julia's powerful array comprehensions in SlangLang:</p>
+                <div class="code-block">
+                    <pre><code># Create a list of squares
+weak squares = [x^2 for x in 1:10]
+
+# Create a filtered list
+weak evens = [x for x in 1:20 based x % 2 == 0]</code></pre>
+                </div>
+                
+                <h3>Multiple Dispatch</h3>
+                <p>SlangLang leverages Julia's multiple dispatch for performance:</p>
+                <div class="code-block">
+                    <pre><code>drop process(data::String):
+    print("Processing string:", data)
+
+drop process(data::Int):
+    print("Processing integer:", data)
+
+# The appropriate function will be called based on the argument type
+process("hello")  # Calls the String version
+process(42)       # Calls the Int version</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>SlangLang - The Gen Z Programming Language</p>
+            <p>Powered by Julia's JIT compilation and multiple dispatch</p>
+        </div>
+    </footer>
+</body>
+</html>
